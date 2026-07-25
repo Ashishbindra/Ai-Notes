@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>New Note</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="header-left">
+
+            <button id="backBtn" class="icon-btn">
+                <span class="material-icons">arrow_back</span>
+            </button>
+
+            <h2>New Note</h2>
+
+        </div>
+
+        <div class="header-right">
+
+            <button id="favoriteBtn" class="icon-btn">
+                <span class="material-icons">star_border</span>
+            </button>
+
+            <button id="pinBtn" class="icon-btn">
+                <span class="material-icons">push_pin</span>
+            </button>
+
+            <button id="aiBtn" class="icon-btn">
+                <span class="material-icons">auto_awesome</span>
+            </button>
+
+            <button id="aiChatBtn" class="tool-btn avatar">
+                <span class="material-icons">smart_toy</span>
+            </button>
+
+            <button id="saveBtn" class="icon-btn">
+                <span class="material-icons">save</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Editor -->
+    <section class="editor">
+
+        <input id="title" type="text" placeholder="Title">
+
+        <div class="label-container">
+
+            <button class="label-chip active" data-label="Personal">
+                Personal
+            </button>
+
+            <button class="label-chip" data-label="Work">
+                Work
+            </button>
+
+            <button class="label-chip" data-label="Study">
+                Study
+            </button>
+
+            <button class="label-chip" data-label="Ideas">
+                Ideas
+            </button>
+
+        </div>
+
+        <textarea id="content" placeholder="Start writing your note..."></textarea>
+        <div class="editor-toolbar">
+
+            <button id="colorBtn" class="tool-btn">
+                <span class="material-icons">palette</span>
+            </button>
+
+            <button id="voiceBtn">
+                <span class="material-icons">mic</span>
+            </button>
+
+            <button id="attachmentBtn" class="tool-btn">
+                <span class="material-icons">attach_file</span>
+            </button>
+
+            <button id="emojiBtn" class="tool-btn">
+                <span class="material-icons">sentiment_satisfied</span>
+            </button>
+        </div>
+        <div class="note-image">
+            <img id="previewImage" src="" alt="Preview">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+        </div>
+        <div id="colorPicker" class="color-picker">
+
+            <div class="color-item" data-color="#FFFFFF" style="background:#FFFFFF"></div>
+
+            <div class="color-item" data-color="#FFF8E1" style="background:#FFF8E1"></div>
+
+            <div class="color-item" data-color="#FFEBEE" style="background:#FFEBEE"></div>
+
+            <div class="color-item" data-color="#E8F5E9" style="background:#E8F5E9"></div>
+
+            <div class="color-item" data-color="#E3F2FD" style="background:#E3F2FD"></div>
+
+            <div class="color-item" data-color="#F3E5F5" style="background:#F3E5F5"></div>
+
+            <div class="color-item" data-color="#ECEFF1" style="background:#ECEFF1"></div>
+
+        </div>
+        <div class="editor-bottom">
+
+            <div class="editor-info">
+
+                <span id="lastEdited"></span>
+
+                <span id="wordCount">
+                    Words : 0
+                </span>
+
+                <span id="charCount">
+                    Characters : 0
+                </span>
+
+            </div>
+
+            <span id="saveStatus">
+                Saved
+            </span>
+
+        </div>
+    </section>
+    <!-- Image Viewer -->
+    <div id="imageViewer">
+
+        <span id="closeViewer">✕</span>
+
+        <img id="viewerImage">
+
+    </div>
+    <!-- AI Bottom Sheet -->
+
+    <div id="aiSheet" class="ai-sheet">
+
+        <div class="ai-sheet-content">
+
+            <div class="ai-sheet-header">
+
+                <h3>✨ AI Assistant</h3>
+
+                <button id="closeAiSheet">
+                    ✕
+                </button>
+
+            </div>
+
+            <button class="ai-action" data-action="summarize">
+                📝 Summarize
+            </button>
+
+            <button class="ai-action" data-action="rewrite">
+                ✍ Rewrite
+            </button>
+
+            <button class="ai-action" data-action="translate">
+                🌐 Translate
+            </button>
+
+            <button class="ai-action" data-action="grammar">
+                📖 Grammar Fix
+            </button>
+
+            <button class="ai-action" data-action="continue">
+                💡 Continue Writing
+            </button>
+
+        </div>
+        <div id="aiChatModal" class="ai-chat">
+
+            <div class="ai-chat-box">
+
+                <div class="ai-chat-header">
+
+                    <span>🤖 AI Assistant</span>
+
+                    <button id="closeAiChat">
+                        ✕
+                    </button>
+
+                </div>
+
+                <div id="aiMessages" class="ai-messages">
+
+                </div>
+
+                <div class="ai-input">
+
+                    <input id="aiQuestion" type="text" placeholder="Ask anything about this note...">
+
+                    <button id="sendAi">
+                        <span class="material-icons">send</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="emojiPicker" class="emoji-picker">
+
+        <div id="emojiGrid" class="emoji-grid"></div>
+
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/emogi.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+
+</html>

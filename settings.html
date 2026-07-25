@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <button class="menu-btn" id="backBtn">
+
+            <span class="material-icons">arrow_back</span>
+
+        </button>
+
+        <h1>Settings</h1>
+
+        <div style="width:42px"></div>
+
+    </header>
+
+
+    <div class="settings">
+
+        <div class="setting-item">
+
+            <span>🌙 Dark Mode</span>
+
+            <input type="checkbox" id="darkMode">
+
+        </div>
+
+        <div class="setting-item">
+
+            <span>📝 Font Size</span>
+
+            <select id="fontSize">
+
+                <option>Small</option>
+
+                <option selected>Medium</option>
+
+                <option>Large</option>
+
+            </select>
+
+        </div>
+
+        <div class="setting-item">
+
+            <span>ℹ Version</span>
+
+            <span>1.0.0</span>
+
+        </div>
+
+    </div>
+    <script src="js/theme.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

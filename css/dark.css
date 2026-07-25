@@ -1,0 +1,202 @@
+/*==================================================
+    DARK MODE
+==================================================*/
+
+body.dark{
+
+    --bg:#121212;
+    --card:#1E1E1E;
+
+    --text:#FFFFFF;
+    --text-light:#BDBDBD;
+
+    --border:#333333;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    transition:.30s;
+
+}
+
+
+/*==================================================
+    HEADER
+==================================================*/
+
+body.dark .header{
+
+    background:#1E1E1E;
+
+    border-bottom:1px solid #333;
+
+}
+
+
+/*==================================================
+    SEARCH
+==================================================*/
+
+body.dark .search-box{
+
+    background:#242424;
+
+    border:1px solid #333;
+
+}
+
+body.dark .search-box input{
+
+    color:#FFFFFF;
+
+}
+
+body.dark .search-box input::placeholder{
+
+    color:#9E9E9E;
+
+}
+
+
+/*==================================================
+    NOTE CARD
+==================================================*/
+
+body.dark .note-card{
+
+    background:#242424;
+
+    border:1px solid #333;
+
+}
+
+body.dark .note-body h3{
+
+    color:#FFFFFF;
+
+}
+
+body.dark .note-body p{
+
+    color:#CFCFCF;
+
+}
+
+body.dark .note-footer small{
+
+    color:#AAAAAA;
+
+}
+
+
+/*==================================================
+    DRAWER
+==================================================*/
+
+body.dark .drawer{
+
+    background:#1E1E1E;
+
+}
+
+body.dark .drawer-item{
+
+    color:#EEEEEE;
+
+}
+
+body.dark .drawer-item:hover{
+
+    background:#2D2D2D;
+
+}
+
+body.dark .drawer-item.active{
+
+    background:#1976D2;
+
+    color:#FFFFFF;
+
+}
+
+
+/*==================================================
+    LABEL
+==================================================*/
+
+body.dark .note-label{
+
+    background:#1565C0;
+
+    color:#FFFFFF;
+
+}
+
+
+/*==================================================
+    BUTTONS
+==================================================*/
+
+body.dark .menu-btn,
+body.dark .theme-btn,
+body.dark .icon-btn{
+
+    color:#FFFFFF;
+
+}
+
+body.dark .menu-btn:hover,
+body.dark .theme-btn:hover,
+body.dark .icon-btn:hover{
+
+    background:#2E2E2E;
+
+}
+
+
+/*==================================================
+    FAB
+==================================================*/
+
+body.dark .fab{
+
+    background:linear-gradient(135deg,#1976D2,#42A5F5);
+
+}
+
+
+/*==================================================
+    SETTINGS
+==================================================*/
+
+body.dark .setting-item{
+
+    background:#242424;
+
+    border:1px solid #333;
+
+}
+
+
+/*==================================================
+    SCROLLBAR
+==================================================*/
+
+body.dark ::-webkit-scrollbar-track{
+
+    background:#1E1E1E;
+
+}
+
+body.dark ::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover{
+
+    background:#777;
+
+}

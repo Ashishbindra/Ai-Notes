@@ -1,0 +1,1880 @@
+/*==================================================
+    AI NOTES
+    STYLE.CSS
+    PART 1
+==================================================*/
+
+/*==============================
+    Google Font
+==============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/*==============================
+    CSS Variables
+==============================*/
+
+:root {
+
+    --primary: #1976D2;
+    --primary-light: #42A5F5;
+
+    --danger: #EF5350;
+    --warning: #FFC107;
+    --success: #4CAF50;
+
+    --white: #FFFFFF;
+    --black: #1F1F1F;
+
+    --text: #222222;
+    --text-light: #777777;
+
+    --bg: #F5F7FB;
+    --card: #FFFFFF;
+
+    --border: #E8E8E8;
+
+    --shadow-small: 0 2px 8px rgba(0, 0, 0, .08);
+    --shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    --shadow-large: 0 12px 35px rgba(0, 0, 0, .12);
+
+    --radius: 20px;
+
+}
+
+
+/*==============================
+    Reset
+==============================*/
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/*==============================
+    Common
+==============================*/
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+}
+
+input,
+textarea,
+select {
+
+    outline: none;
+
+    border: none;
+
+    font-family: inherit;
+
+}
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/*==============================
+    Utility Classes
+==============================*/
+
+.hidden {
+
+    display: none !important;
+
+}
+
+.center {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.flex {
+
+    display: flex;
+
+}
+
+.space-between {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/*==============================
+    Scrollbar
+==============================*/
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #ECECEC;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #BDBDBD;
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #9E9E9E;
+
+}
+
+/*==================================================
+    HEADER
+==================================================*/
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    background: var(--card);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    box-shadow: var(--shadow-small);
+
+    z-index: 100;
+
+}
+
+
+/*==============================
+    Header Left
+==============================*/
+
+.header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+.header-left h1 {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+    letter-spacing: .3px;
+
+}
+
+
+/*==============================
+    Header Right
+==============================*/
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+/*==============================
+    Icon Buttons
+==============================*/
+
+.icon-btn,
+.menu-btn,
+.theme-btn {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .25s;
+
+    color: #555;
+
+}
+
+.icon-btn:hover,
+.menu-btn:hover,
+.theme-btn:hover {
+
+    background: #F2F2F2;
+
+}
+
+.icon-btn:active,
+.menu-btn:active,
+.theme-btn:active {
+
+    transform: scale(.92);
+
+}
+
+.icon-btn .material-icons,
+.menu-btn .material-icons,
+.theme-btn .material-icons {
+
+    font-size: 26px;
+
+}
+
+
+/*==============================
+    Logo
+==============================*/
+
+.logo {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.logo .material-icons {
+
+    font-size: 24px;
+
+}
+
+
+/*==============================
+    Ripple Effect
+==============================*/
+
+.menu-btn,
+.icon-btn,
+.theme-btn {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.menu-btn::after,
+.icon-btn::after,
+.theme-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 0;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, .08);
+
+    transition: .35s;
+
+}
+
+.menu-btn:active::after,
+.icon-btn:active::after,
+.theme-btn:active::after {
+
+    width: 120px;
+
+    height: 120px;
+
+}
+
+/*==================================================
+    SEARCH BAR
+==================================================*/
+
+.search-section {
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+}
+
+.search-box {
+
+    width: 100%;
+
+    height: 58px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 16px;
+
+    box-shadow: var(--shadow-small);
+
+    transition: .30s ease;
+
+}
+
+.search-box:hover {
+
+    box-shadow: var(--shadow);
+
+}
+
+.search-box:focus-within {
+
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, .10);
+
+}
+
+
+/*==============================
+    Search Icon
+==============================*/
+
+.search-icon {
+
+    color: #9E9E9E;
+
+    font-size: 24px;
+
+    margin-right: 12px;
+
+}
+
+
+/*==============================
+    Input
+==============================*/
+
+.search-box input {
+
+    flex: 1;
+
+    height: 100%;
+
+    background: transparent;
+
+    font-size: 16px;
+
+    color: var(--text);
+
+}
+
+.search-box input::placeholder {
+
+    color: #A0A0A0;
+
+}
+
+
+/*==============================
+    Clear Button
+==============================*/
+
+#clearSearch {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .25s;
+
+    color: #666;
+
+}
+
+#clearSearch:hover {
+
+    background: #F3F3F3;
+
+}
+
+#clearSearch:active {
+
+    transform: scale(.92);
+
+}
+
+
+/*==============================
+    Responsive
+==============================*/
+
+@media (max-width:600px) {
+
+    .search-section {
+
+        padding: 15px;
+
+    }
+
+    .search-box {
+
+        height: 54px;
+
+        border-radius: 16px;
+
+    }
+
+}
+
+/*==================================================
+    NOTE CARD
+==================================================*/
+
+.notes-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+
+    justify-content: start;
+
+    gap: 20px;
+
+}
+
+
+/*==============================
+    Card
+==============================*/
+
+.note-card {
+
+    background: var(--card);
+
+    border-radius: 22px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-small);
+
+    transition: .30s;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.note-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-large);
+
+}
+
+
+/*==============================
+    Header
+==============================*/
+
+.note-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+/*==============================
+    Label
+==============================*/
+
+.note-label {
+
+    background: #E3F2FD;
+
+    color: var(--primary);
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/*==============================
+    Status
+==============================*/
+
+.note-status {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.note-status .material-icons {
+
+    font-size: 20px;
+
+}
+
+.pin-icon {
+
+    color: #1976D2;
+
+}
+
+.star-icon {
+
+    color: #FFC107;
+
+}
+
+
+/*==============================
+    Body
+==============================*/
+
+.note-body {
+
+    cursor: pointer;
+
+    flex: 1;
+
+}
+
+.note-body h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    word-break: break-word;
+
+}
+
+.note-body p {
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 5;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    word-break: break-word;
+
+}
+
+
+/*==============================
+    Footer
+==============================*/
+
+.note-footer {
+
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.note-footer small {
+
+    color: #9E9E9E;
+
+    font-size: 12px;
+
+}
+
+
+/*==============================
+    Actions
+==============================*/
+
+.note-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.note-actions button {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .25s;
+
+}
+
+.note-actions button:hover {
+
+    background: #F3F3F3;
+
+}
+
+.note-actions button:active {
+
+    transform: scale(.90);
+
+}
+
+
+/*==============================
+    Buttons
+==============================*/
+
+.favorite-btn.active {
+
+    color: #FFC107;
+
+}
+
+.pin-btn.active {
+
+    color: #1976D2;
+
+}
+
+.delete-btn {
+
+    color: #EF5350;
+
+}
+
+
+/*==============================
+    Mobile
+==============================*/
+
+@media(max-width:700px) {
+
+    .notes-container {
+
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+
+    }
+
+}
+
+/*==================================================
+    FLOATING ACTION BUTTON
+==================================================*/
+
+.fab {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: linear-gradient(135deg, #1976D2, #42A5F5);
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 30px rgba(25, 118, 210, .35);
+
+    transition: .30s;
+
+    z-index: 200;
+
+}
+
+.fab .material-icons {
+
+    font-size: 34px;
+
+}
+
+.fab:hover {
+
+    transform: translateY(-6px) scale(1.05);
+
+    box-shadow: 0 18px 35px rgba(25, 118, 210, .45);
+
+}
+
+.fab:active {
+
+    transform: scale(.92);
+
+}
+
+
+/*==================================================
+    EMPTY STATE
+==================================================*/
+
+.empty {
+
+    width: 100%;
+
+    min-height: 65vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #888;
+
+}
+
+.empty .material-icons {
+
+    font-size: 90px;
+
+    color: #BDBDBD;
+
+    margin-bottom: 18px;
+
+}
+
+.empty h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    color: #444;
+
+}
+
+.empty p {
+
+    font-size: 16px;
+
+    color: #888;
+
+}
+
+
+/*==================================================
+    Fade Animation
+==================================================*/
+
+.fade-up {
+
+    animation: fadeUp .45s ease;
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/*==================================================
+    Floating Animation
+==================================================*/
+
+.fab {
+
+    animation: floating 3s ease-in-out infinite;
+
+}
+
+@keyframes floating {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-5px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/*==================================================
+    Mobile
+==================================================*/
+
+@media(max-width:700px) {
+
+    .fab {
+
+        width: 60px;
+
+        height: 60px;
+
+        right: 18px;
+
+        bottom: 18px;
+
+    }
+
+    .fab .material-icons {
+
+        font-size: 30px;
+
+    }
+
+}
+
+/*==================================================
+    NAVIGATION DRAWER
+==================================================*/
+
+.drawer {
+
+    position: fixed;
+
+    top: 0;
+
+    left: -300px;
+
+    width: 280px;
+
+    height: 100vh;
+
+    background: var(--card);
+
+    box-shadow: 8px 0 25px rgba(0, 0, 0, .15);
+
+    transition: .35s ease;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+}
+
+.drawer.show {
+
+    left: 0;
+
+}
+
+
+/*==================================================
+    Overlay
+==================================================*/
+
+.drawer-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .30s;
+
+    z-index: 999;
+
+}
+
+.drawer-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/*==================================================
+    Drawer Header
+==================================================*/
+
+.drawer-header {
+
+    padding: 25px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.drawer-logo {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #1976D2, #42A5F5);
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.drawer-logo .material-icons {
+
+    font-size: 30px;
+
+}
+
+.drawer-header h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 4px;
+
+}
+
+.drawer-header p {
+
+    font-size: 13px;
+
+    color: #888;
+
+}
+
+
+/*==================================================
+    Menu
+==================================================*/
+
+.drawer-menu {
+
+    padding: 15px 10px;
+
+}
+
+.drawer-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    margin-bottom: 6px;
+
+}
+
+.drawer-item:hover {
+
+    background: #F3F6FA;
+
+}
+
+.drawer-item.active {
+
+    background: #E3F2FD;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+}
+
+.drawer-item .material-icons {
+
+    font-size: 24px;
+
+}
+
+
+/*==================================================
+    Footer
+==================================================*/
+
+.drawer-footer {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #999;
+
+}
+
+/*==================================================
+    ANIMATIONS
+==================================================*/
+
+/* Fade In */
+
+.fade-in {
+
+    animation: fadeIn .35s ease;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Slide Up */
+
+.slide-up {
+
+    animation: slideUp .35s ease;
+
+}
+
+@keyframes slideUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Scale */
+
+.scale {
+
+    animation: scale .25s ease;
+
+}
+
+@keyframes scale {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.92);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/*==================================================
+    RIPPLE EFFECT
+==================================================*/
+
+.ripple {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.ripple::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: translate(-50%, -50%);
+
+    transition: .45s;
+
+}
+
+.ripple:active::after {
+
+    width: 250px;
+
+    height: 250px;
+
+}
+
+
+/*==================================================
+    CARD ANIMATION
+==================================================*/
+
+.note-card {
+
+    animation: cardShow .35s ease;
+
+}
+
+@keyframes cardShow {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/*==================================================
+    BUTTON HOVER
+==================================================*/
+
+.note-actions button,
+.icon-btn,
+.menu-btn,
+.theme-btn,
+.fab {
+
+    transition: .25s;
+
+}
+
+.note-actions button:hover,
+.icon-btn:hover,
+.menu-btn:hover,
+.theme-btn:hover {
+
+    transform: scale(1.08);
+
+}
+
+.note-actions button:active,
+.icon-btn:active,
+.menu-btn:active,
+.theme-btn:active {
+
+    transform: scale(.92);
+
+}
+
+
+/*==================================================
+    INPUT ANIMATION
+==================================================*/
+
+input,
+textarea,
+select {
+
+    transition: .25s;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    transform: scale(1.01);
+
+}
+
+
+/*==================================================
+    SCROLL ANIMATION
+==================================================*/
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+/*==================================================
+    RESPONSIVE DESIGN
+==================================================*/
+
+/* Laptop */
+
+@media (max-width:1200px) {
+
+    .notes-container {
+
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    }
+
+}
+
+
+/* Tablet */
+
+@media (max-width:992px) {
+
+    .header {
+
+        padding: 0 15px;
+
+    }
+
+    .header h1 {
+
+        font-size: 22px;
+
+    }
+
+    .notes-container {
+
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+        gap: 18px;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+    .header {
+
+        height: 65px;
+
+    }
+
+    .header h1 {
+
+        font-size: 20px;
+
+    }
+
+    .search-section {
+
+        padding: 15px;
+
+    }
+
+    .notes-container {
+
+        padding: 15px;
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .drawer {
+
+        width: 260px;
+
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media (max-width:480px) {
+
+    .header {
+
+        padding: 0 12px;
+
+    }
+
+    .header-left {
+
+        gap: 8px;
+
+    }
+
+    .header h1 {
+
+        font-size: 18px;
+
+    }
+
+    .search-box {
+
+        height: 52px;
+
+    }
+
+    .note-card {
+
+        border-radius: 18px;
+
+        padding: 15px;
+
+    }
+
+    .note-body h3 {
+
+        font-size: 18px;
+
+    }
+
+    .note-body p {
+
+        font-size: 14px;
+
+    }
+
+    .fab {
+
+        width: 58px;
+
+        height: 58px;
+
+        right: 15px;
+
+        bottom: 15px;
+
+    }
+
+}
+
+
+/*==================================================
+    SELECTION
+==================================================*/
+
+::selection {
+
+    background: #1976D2;
+
+    color: #fff;
+
+}
+
+
+/*==================================================
+    IMAGE
+==================================================*/
+
+img {
+
+    user-select: none;
+
+    pointer-events: none;
+
+}
+
+
+/*==================================================
+    TEXTAREA
+==================================================*/
+
+textarea {
+
+    resize: none;
+
+}
+
+
+/*==================================================
+    TRANSITION
+==================================================*/
+
+* {
+
+    transition:
+
+        background .25s,
+
+        color .25s,
+
+        border-color .25s,
+
+        box-shadow .25s;
+
+}
+
+.share-btn {
+
+    color: #4CAF50;
+
+}
+
+.popup-menu {
+
+    position: fixed;
+
+    width: 220px;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+
+    display: none;
+
+    overflow: hidden;
+
+    z-index: 5000;
+
+    animation: popupShow .18s ease;
+
+}
+
+.popup-menu.show {
+
+    display: block;
+
+}
+
+.popup-menu div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.popup-menu div:hover {
+
+    background: #F5F5F5;
+
+}
+
+@keyframes popupShow {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+.popup-menu {
+    min-height: fit-content;
+    max-height: 250px;
+}
+
+.more-btn {
+
+    color: #555;
+
+}
+
+/*=====================================
+    DELETE DIALOG
+=====================================*/
+
+.dialog-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .45);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: .25s;
+
+    z-index: 6000;
+
+}
+
+.dialog-overlay.show {
+
+    visibility: visible;
+
+    opacity: 1;
+
+}
+
+.dialog-box {
+
+    width: 350px;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    animation: dialogShow .25s;
+
+}
+
+.dialog-icon {
+
+    font-size: 60px;
+
+    color: #EF5350;
+
+    margin-bottom: 15px;
+
+}
+
+.dialog-box h2 {
+
+    margin-bottom: 10px;
+
+}
+
+.dialog-box p {
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+}
+
+.dialog-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+.dialog-buttons button {
+
+    padding: 12px 25px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+}
+
+#cancelDelete {
+
+    background: #EEEEEE;
+
+}
+
+#confirmDelete {
+
+    background: #EF5350;
+
+    color: #fff;
+
+}
+
+@keyframes dialogShow {
+
+    from {
+
+        transform: scale(.9);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+/*=========================================
+    NOTE IMAGE PREVIEW
+=========================================*/
+
+.note-image-preview {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #E0E0E0;
+
+}
