@@ -15,199 +15,200 @@
 </head>
 
 <body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
 
-    <!-- Header -->
-    <header class="header">
+            <div class="header-left">
 
-        <div class="header-left">
+                <button class="menu-btn ripple">
 
-            <button class="menu-btn ripple">
-
-                <span class="material-icons">menu</span>
-
-            </button>
-
-            <h1>AI Notes</h1>
-
-        </div>
-
-        <div class="header-right">
-
-            <button class="theme-btn ripple icon-btn ripple">
-
-                <span class="material-icons">dark_mode</span>
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- Search -->
-    <section class="search-section">
-
-        <div class="search-box">
-
-            <span class="material-icons search-icon">
-                search
-            </span>
-
-            <input type="text" id="searchInput" placeholder="Search your notes...">
-
-            <button id="clearSearch">
-
-                <span class="material-icons">
-                    close
-                </span>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- Notes -->
-    <main class="notes-container" id="notesContainer">
-
-        <!-- Notes JS se load honge -->
-
-    </main>
-
-
-    <!-- Floating Button -->
-
-    <button class="fab" id="addNote">
-
-        <span class="material-icons">add</span>
-
-    </button>
-    <!-- Bottom Menu -->
-
-    <!-- Drawer -->
-    <div class="drawer" id="drawer">
-
-        <div class="drawer-header">
-
-            <div class="drawer-logo">
-
-                <span class="material-icons">
-                    auto_awesome
-                </span>
-
-            </div>
-
-            <div>
-
-                <h2>AI Notes</h2>
-
-                <p>Version 1.0</p>
-
-            </div>
-
-        </div>
-
-        <div class="drawer-menu">
-            <div class="drawer-item" id="allNotes">
-                <span class="material-icons">description</span>
-                <span>All Notes</span>
-            </div>
-
-            <div class="drawer-item" id="favoriteNotes">
-                <span class="material-icons">star</span>
-                <span>Favorites</span>
-            </div>
-
-            <div class="drawer-item" id="pinnedNotes">
-                <span class="material-icons">push_pin</span>
-                <span>Pinned</span>
-            </div>
-
-            <div class="drawer-item" id="exportNotes">
-
-                <span class="material-icons">download</span>
-
-                <span>Export Notes</span>
-
-            </div>
-            <div class="drawer-item" id="importNotes">
-
-                <span class="material-icons">upload_file</span>
-
-                <span>Import Notes</span>
-                <input type="file" id="importFile" accept=".json" hidden>
-
-            </div>
-        </div>
-        <div class="drawer-footer">
-
-            Made with ❤️ by AI Notes
-
-        </div>
-    </div>
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-    <div class="popup-menu" id="popupMenu">
-
-        <div id="shareAction">
-
-            <span class="material-icons">share</span>
-
-            Share
-
-        </div>
-
-        <div id="copyAction">
-
-            <span class="material-icons">content_copy</span>
-
-            Copy
-
-        </div>
-
-        <div id="deleteAction">
-
-            <span class="material-icons">delete</span>
-
-            Delete
-
-        </div>
-
-    </div>
-    <!-- Delete Dialog -->
-
-    <div class="dialog-overlay" id="dialogOverlay">
-
-        <div class="dialog-box">
-
-            <span class="material-icons dialog-icon">
-                delete
-            </span>
-
-            <h2>Delete Note?</h2>
-
-            <p>
-                This note will be permanently deleted.
-            </p>
-
-            <div class="dialog-buttons">
-
-                <button id="cancelDelete">
-
-                    Cancel
+                    <span class="material-icons">menu</span>
 
                 </button>
 
-                <button id="confirmDelete">
+                <h1>AI Notes</h1>
 
-                    Delete
+            </div>
+
+            <div class="header-right">
+
+                <button class="theme-btn ripple icon-btn ripple">
+
+                    <span class="material-icons">dark_mode</span>
 
                 </button>
 
             </div>
 
-        </div>
+        </header>
 
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span class="material-icons search-icon">
+                    search
+                </span>
+
+                <input type="text" id="searchInput" placeholder="Search your notes...">
+
+                <button id="clearSearch">
+
+                    <span class="material-icons">
+                        close
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Notes -->
+        <main class="notes-container" id="notesContainer">
+
+            <!-- Notes JS se load honge -->
+
+        </main>
+
+
+        <!-- Floating Button -->
+
+        <button class="fab" id="addNote">
+
+            <span class="material-icons">add</span>
+
+        </button>
+        <!-- Bottom Menu -->
+
+        <!-- Drawer -->
+        <div class="drawer" id="drawer">
+
+            <div class="drawer-header">
+
+                <div class="drawer-logo">
+
+                    <span class="material-icons">
+                        auto_awesome
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <h2>AI Notes</h2>
+
+                    <p>Version 1.0</p>
+
+                </div>
+
+            </div>
+
+            <div class="drawer-menu">
+                <div class="drawer-item" id="allNotes">
+                    <span class="material-icons">description</span>
+                    <span>All Notes</span>
+                </div>
+
+                <div class="drawer-item" id="favoriteNotes">
+                    <span class="material-icons">star</span>
+                    <span>Favorites</span>
+                </div>
+
+                <div class="drawer-item" id="pinnedNotes">
+                    <span class="material-icons">push_pin</span>
+                    <span>Pinned</span>
+                </div>
+
+                <div class="drawer-item" id="exportNotes">
+
+                    <span class="material-icons">download</span>
+
+                    <span>Export Notes</span>
+
+                </div>
+                <div class="drawer-item" id="importNotes">
+
+                    <span class="material-icons">upload_file</span>
+
+                    <span>Import Notes</span>
+                    <input type="file" id="importFile" accept=".json" hidden>
+
+                </div>
+            </div>
+            <div class="drawer-footer">
+
+                Made with ❤️ by AI Notes
+
+            </div>
+        </div>
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <div class="popup-menu" id="popupMenu">
+
+            <div id="shareAction">
+
+                <span class="material-icons">share</span>
+
+                Share
+
+            </div>
+
+            <div id="copyAction">
+
+                <span class="material-icons">content_copy</span>
+
+                Copy
+
+            </div>
+
+            <div id="deleteAction">
+
+                <span class="material-icons">delete</span>
+
+                Delete
+
+            </div>
+
+        </div>
+        <!-- Delete Dialog -->
+
+        <div class="dialog-overlay" id="dialogOverlay">
+
+            <div class="dialog-box">
+
+                <span class="material-icons dialog-icon">
+                    delete
+                </span>
+
+                <h2>Delete Note?</h2>
+
+                <p>
+                    This note will be permanently deleted.
+                </p>
+
+                <div class="dialog-buttons">
+
+                    <button id="cancelDelete">
+
+                        Cancel
+
+                    </button>
+
+                    <button id="confirmDelete">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
     <div class="menu-overlay" id="menuOverlay"></div>
     <script src="js/theme.js"></script>
