@@ -2,7 +2,7 @@
 // OpenRouter AI
 // =============================
 
-const OPENROUTER_API_KEY = "";
+const OPENROUTER_API_KEY = "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";
 
 const OPENROUTER_URL =
 "https://openrouter.ai/api/v1/chat/completions";
