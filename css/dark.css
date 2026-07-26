@@ -1,202 +1,233 @@
-/*==================================================
-    DARK MODE
-==================================================*/
+/* ==========================================
+   dark.css
+   AI Notes Premium Dark Theme
+========================================== */
+
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --text-light: #cbd5e1;
+    --border: #334155;
+    background: var(--bg);
+    color: var(--text);
+    transition: .3s;
+}
+
+/* Header */
+
+body.dark .header {
+    background: #111827;
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark .title-group small {
+    color: #94a3b8;
+}
+
+body.dark .icon-btn:hover,
+body.dark .menu-btn:hover,
+body.dark .theme-btn:hover {
+    background: #1f2937;
+}
+
+/* Search */
+
+body.dark .search-box {
+    background: #1e293b;
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+
+body.dark .search-box input {
+    color: #f8fafc;
+}
+
+body.dark .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+body.dark .search-icon {
+    color: #94a3b8;
+}
+
+body.dark #clearSearch {
+    color: #e2e8f0;
+}
+
+body.dark #clearSearch:hover {
+    background: #334155;
+}
+
+/* Notes */
+
+body.dark .note-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+
+body.dark .note-card:hover {
+    border-color: #3b82f6;
+}
+
+body.dark .note-body h3 {
+    color: #f8fafc;
+}
+
+body.dark .note-body p {
+    color: #cbd5e1;
+}
+
+body.dark .note-footer small,
+body.dark .note-label {
+    color: #cbd5e1;
+}
+
+body.dark .note-actions button {
+    color: #e2e8f0;
+}
+
+body.dark .note-actions button:hover {
+    background: #334155;
+}
+
+/* Drawer */
+
+body.dark .drawer {
+    background: #111827;
+}
+
+body.dark .drawer-header {
+    background: #1d4ed8;
+}
+
+body.dark .drawer-item {
+    color: #f8fafc;
+}
+
+body.dark .drawer-item:hover {
+    background: #1f2937;
+}
+
+body.dark .drawer-footer {
+    color: #94a3b8;
+}
+
+/* Popup */
+
+body.dark .popup-menu {
+    background: #1e293b;
+    border: 1px solid var(--border);
+}
+
+body.dark .popup-menu button {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark .popup-menu button:hover {
+    background: #334155;
+}
+
+/* Dialog */
+
+body.dark .dialog-box {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark #cancelDelete {
+    background: #334155;
+    color: #fff;
+}
+
+body.dark #confirmDelete {
+    background: #dc2626;
+    color: #fff;
+}
+
+/* FAB */
+
+body.dark .fab {
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+
+/* Scrollbar */
+
+body.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.dark ::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 20px;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+html.dark{
+    background:#0f172a;
+}
 
 body.dark{
-
-    --bg:#121212;
-    --card:#1E1E1E;
-
-    --text:#FFFFFF;
-    --text-light:#BDBDBD;
-
-    --border:#333333;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-    transition:.30s;
-
+    background:#0f172a !important;
+    min-height:100vh;
 }
 
-
-/*==================================================
-    HEADER
-==================================================*/
+/* ===== Editor Header Dark ===== */
 
 body.dark .header{
-
-    background:#1E1E1E;
-
-    border-bottom:1px solid #333;
-
+    background:#111827;
+    border-bottom:1px solid #334155;
 }
 
+/* सभी Header Buttons */
 
-/*==================================================
-    SEARCH
-==================================================*/
-
-body.dark .search-box{
-
-    background:#242424;
-
-    border:1px solid #333;
-
+body.dark .header .icon-btn,
+body.dark .header .tool-btn{
+    color:#f8fafc;
+    background:transparent;
 }
 
-body.dark .search-box input{
+/* Hover */
 
-    color:#FFFFFF;
-
+body.dark .header .icon-btn:hover,
+body.dark .header .tool-btn:hover{
+    background:#1f2937;
 }
 
-body.dark .search-box input::placeholder{
+/* Favorite Active */
 
-    color:#9E9E9E;
-
+body.dark #favoriteBtn.active{
+    background:rgba(255,193,7,.18);
 }
 
-
-/*==================================================
-    NOTE CARD
-==================================================*/
-
-body.dark .note-card{
-
-    background:#242424;
-
-    border:1px solid #333;
-
+body.dark #favoriteBtn.active .material-icons{
+    color:#FFC107;
 }
 
-body.dark .note-body h3{
+/* Pin Active */
 
-    color:#FFFFFF;
-
+body.dark #pinBtn.active{
+    background:rgba(37,99,235,.18);
 }
 
-body.dark .note-body p{
-
-    color:#CFCFCF;
-
+body.dark #pinBtn.active .material-icons{
+    color:#3b82f6;
 }
 
-body.dark .note-footer small{
+/* AI Buttons */
 
-    color:#AAAAAA;
-
-}
-
-
-/*==================================================
-    DRAWER
-==================================================*/
-
-body.dark .drawer{
-
-    background:#1E1E1E;
-
-}
-
-body.dark .drawer-item{
-
-    color:#EEEEEE;
-
-}
-
-body.dark .drawer-item:hover{
-
-    background:#2D2D2D;
-
-}
-
-body.dark .drawer-item.active{
-
-    background:#1976D2;
-
-    color:#FFFFFF;
-
-}
-
-
-/*==================================================
-    LABEL
-==================================================*/
-
-body.dark .note-label{
-
-    background:#1565C0;
-
-    color:#FFFFFF;
-
-}
-
-
-/*==================================================
-    BUTTONS
-==================================================*/
-
-body.dark .menu-btn,
-body.dark .theme-btn,
-body.dark .icon-btn{
-
-    color:#FFFFFF;
-
-}
-
-body.dark .menu-btn:hover,
-body.dark .theme-btn:hover,
-body.dark .icon-btn:hover{
-
-    background:#2E2E2E;
-
-}
-
-
-/*==================================================
-    FAB
-==================================================*/
-
-body.dark .fab{
-
-    background:linear-gradient(135deg,#1976D2,#42A5F5);
-
-}
-
-
-/*==================================================
-    SETTINGS
-==================================================*/
-
-body.dark .setting-item{
-
-    background:#242424;
-
-    border:1px solid #333;
-
-}
-
-
-/*==================================================
-    SCROLLBAR
-==================================================*/
-
-body.dark ::-webkit-scrollbar-track{
-
-    background:#1E1E1E;
-
-}
-
-body.dark ::-webkit-scrollbar-thumb{
-
-    background:#555;
-
-}
-
-body.dark ::-webkit-scrollbar-thumb:hover{
-
-    background:#777;
-
+body.dark #aiBtn:hover,
+body.dark #aiChatBtn:hover,
+body.dark #saveBtn:hover{
+    background:#1f2937;
 }

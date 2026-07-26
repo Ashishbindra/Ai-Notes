@@ -1,71 +1,244 @@
-/* ===========================
-   Mobile Responsive Fix
-=========================== */
+/* ==========================================
+   responsive.css
+   AI Notes Mobile Responsive
+========================================== */
 
-@media (max-width:768px){
+@media (max-width:1200px) {
 
-    body{
-        overflow-x:hidden;
+    .notes-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .header{
-        height:60px;
-        padding:0 12px;
+}
+
+@media (max-width:992px) {
+
+    .notes-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .header h1{
-        font-size:18px;
+    .header h1 {
+        font-size: 20px;
     }
 
-    .header-left{
-        gap:8px;
+    .drawer {
+        width: 300px;
     }
 
-    .search-section{
-        padding:12px;
+}
+
+@media (max-width:768px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
     }
 
-    .search-box{
-        width:100%;
-        height:50px;
+    .header {
+        height: 60px;
+        padding: 0 12px;
     }
 
-    .search-box input{
-        min-width:0;
+    .header-left {
+        gap: 10px;
     }
 
-    #clearSearch{
-        width:40px;
-        height:40px;
-        flex-shrink:0;
+    .header h1 {
+        font-size: 18px;
     }
 
-    .notes-container{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:14px;
-        padding:12px;
+    .title-group small {
+        display: none;
     }
 
-    .note-card{
-        width:100%;
+    .icon-btn,
+    .menu-btn,
+    .theme-btn {
+        width: 42px;
+        height: 42px;
     }
 
-    .fab{
-        position:fixed;
-        right:16px;
-        bottom:16px;
-        width:58px;
-        height:58px;
-        z-index:9999;
+    .search-section {
+        padding: 12px;
     }
 
-    .drawer{
-        width:85%;
-        max-width:280px;
+    .search-box {
+        height: 52px;
+        border-radius: 14px;
+        padding: 0 12px;
     }
 
-    .popup-menu{
-        width:200px;
+    .search-box input {
+        font-size: 15px;
+        flex: 1;
+        min-width: 0;
     }
+
+    #clearSearch {
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 12px;
+    }
+
+    .note-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .note-body h3 {
+        font-size: 18px;
+    }
+
+    .note-body p {
+        font-size: 14px;
+    }
+
+    .note-image-preview {
+        height: 180px;
+    }
+
+    .note-footer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .note-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .fab {
+        position: fixed !important;
+        right: 16px !important;
+        bottom: 45px !important;
+        width: 56px;
+        height: 56px;
+        z-index: 9999;
+    }
+
+
+    .drawer {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .popup-menu {
+        width: 190px;
+        max-width: calc(100vw - 20px);
+    }
+
+    .dialog-box {
+        width: 92%;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .header {
+        padding: 0 6px;
+    }
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .header-right {
+        gap: 0;
+    }
+
+    .header-right .icon-btn,
+    .header-right .tool-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .header h1 {
+        font-size: 17px;
+    }
+
+    .search-section {
+        padding: 10px;
+    }
+
+    .search-box {
+        height: 50px;
+    }
+
+    .notes-container {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .note-card {
+        padding: 14px;
+    }
+
+    .note-body h3 {
+        font-size: 17px;
+    }
+
+    .note-body p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .note-image-preview {
+        height: 160px;
+    }
+
+    .drawer {
+        width: 90%;
+    }
+
+    .fab {
+        width: 54px;
+        height: 54px;
+        right: 14px;
+        bottom: max(18px, env(safe-area-inset-bottom));
+    }
+
+    .popup-menu {
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+    }
+
+    .dialog-buttons {
+        flex-direction: column;
+    }
+
+    .dialog-buttons button {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:360px) {
+
+    .header h1 {
+        font-size: 16px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+    }
+
+    .note-body h3 {
+        font-size: 16px;
+    }
+
+    .note-body p {
+        font-size: 12px;
+    }
+
 }

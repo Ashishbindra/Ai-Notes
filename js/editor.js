@@ -26,6 +26,8 @@ const aiQuestion = document.getElementById("aiQuestion");
 const sendAi = document.getElementById("sendAi");
 
 // Variables
+let isFavorite = false;
+let isPinned = false;
 let lastQuestion = "";
 let isSending = false;
 let selectedImage = "";
@@ -94,6 +96,11 @@ function loadNote() {
             previewImage.hidden = true;
 
         }
+
+        isFavorite = note.favorite || false;
+        isPinned = note.pinned || false;
+
+        updateHeaderIcons();
 
         updateCounter();
 
@@ -207,6 +214,10 @@ function saveNote() {
 
             notes[index].color = selectedColor;
 
+            notes[index].favorite = isFavorite;
+
+            notes[index].pinned = isPinned;
+
             if (selectedImage) {
                 notes[index].image = selectedImage;
             }
@@ -240,6 +251,10 @@ function saveNote() {
             pinned: false,
 
             favorite: false,
+
+            favorite: isFavorite,
+
+            pinned: isPinned,
 
             createdAt: new Date().toLocaleString(),
 
@@ -527,15 +542,13 @@ saveNote = function () {
 
 const favoriteBtn = document.getElementById("favoriteBtn");
 
-if (favoriteBtn) {
+favoriteBtn.onclick = () => {
 
-    favoriteBtn.onclick = () => {
+    isFavorite = !isFavorite;
 
-        favoriteBtn.classList.toggle("active");
+    updateHeaderIcons();
 
-    };
-
-}
+};
 
 
 // ==========================================
@@ -544,15 +557,13 @@ if (favoriteBtn) {
 
 const pinBtn = document.getElementById("pinBtn");
 
-if (pinBtn) {
+pinBtn.onclick = () => {
 
-    pinBtn.onclick = () => {
+    isPinned = !isPinned;
 
-        pinBtn.classList.toggle("active");
+    updateHeaderIcons();
 
-    };
-
-}
+};
 
 
 // ==========================================
@@ -1027,3 +1038,24 @@ document.addEventListener("click", (e) => {
     sendAi.click();
 
 });
+
+function updateHeaderIcons(){
+
+    const favIcon = favoriteBtn.querySelector(".material-icons");
+    const pinIcon = pinBtn.querySelector(".material-icons");
+
+    if(isFavorite){
+        favoriteBtn.classList.add("active");
+        favIcon.textContent = "star";
+    }else{
+        favoriteBtn.classList.remove("active");
+        favIcon.textContent = "star_border";
+    }
+
+    if(isPinned){
+        pinBtn.classList.add("active");
+    }else{
+        pinBtn.classList.remove("active");
+    }
+
+}
